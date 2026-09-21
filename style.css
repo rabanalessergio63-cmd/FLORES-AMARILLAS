@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #050505;
+    background-color: #000000;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100vh;
@@ -16,27 +16,60 @@ body {
     text-align: center;
 }
 
+/* Estilo de la tarjeta interactiva */
 .card {
     position: relative;
     z-index: 10;
-    background: rgba(20, 20, 20, 0.75);
-    padding: 30px 40px;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 35px 50px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: rgba(30, 30, 30, 0.95);
+    border-color: #ffdf00;
 }
 
 .card h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #ffdf00;
-    margin-bottom: 10px;
-    text-shadow: 0 0 15px rgba(255, 223, 0, 0.5);
+    text-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
 }
 
-.card p {
-    color: #cccccc;
-    font-size: 1.1rem;
+/* Contenedor de la sorpresa (oculto inicialmente) */
+.surprise-container {
+    position: absolute;
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.surprise-img {
+    max-width: 320px;
+    width: 80vw;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 223, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Contenedor de flores flotantes */
