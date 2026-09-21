@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("flowersContainer");
     const card = document.getElementById("card");
     const surpriseContainer = document.getElementById("surpriseContainer");
-    const totalFlowers = 25;
+    const totalFlowers = 30; // Cantidad de destellos/flores de fondo
 
-    // Crear las flores de fondo
+    // Generar las flores/estrellas flotantes de fondo
     for (let i = 0; i < totalFlowers; i++) {
         createFlower();
     }
@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const flower = document.createElement("div");
         flower.classList.add("flower");
 
-        const size = Math.random() * 20 + 15;
+        const size = Math.random() * 15 + 10; // Tamaños variados
         flower.style.width = `${size}px`;
         flower.style.height = `${size}px`;
         flower.style.left = `${Math.random() * 100}vw`;
 
-        const duration = Math.random() * 6 + 4;
+        const duration = Math.random() * 5 + 4; // Velocidad de subida
         const delay = Math.random() * 5;
 
         flower.style.animationDuration = `${duration}s`;
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Acción al hacer clic en la tarjeta
+    // Al hacer clic en el botón, se oculta la tarjeta y se muestra el ramo con el título brillante
     card.addEventListener("click", () => {
-        card.style.display = "none"; // Oculta la tarjeta del mensaje
-        surpriseContainer.style.display = "flex"; // Muestra la imagen del perrito sobre fondo negro
+        card.style.display = "none";
+        surpriseContainer.style.display = "flex";
     });
 });
