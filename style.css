@@ -8,7 +8,7 @@ body {
     background-color: #05050a;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100vh; 
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@ body {
     text-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
 }
 
-/* Contenedor del ramo y el texto estilo "Flores Para Ti" (oculto inicialmente) */
+/* Contenedor de la sorpresa (oculto inicialmente) */
 .surprise-container {
     position: absolute;
     z-index: 5;
@@ -56,43 +56,65 @@ body {
     padding: 20px;
 }
 
+/* Botón de cierre (X) */
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffdf00;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #ffdf00;
+    color: #000000;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffdf00;
+}
+
 /* Título brillante superior */
 .title-glow {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: #ffea00;
-    margin-bottom: 25px;
-    text-shadow: 0 0 10px #ffea00, 0 0 20px #ffbb00, 0 0 30px #ff9900;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffea00, 0 0 20px #ffbb00;
     animation: pulseTitle 2s infinite alternate;
 }
 
 @keyframes pulseTitle {
-    0% { transform: scale(1); text-shadow: 0 0 10px #ffea00, 0 0 20px #ffbb00; }
-    100% { transform: scale(1.04); text-shadow: 0 0 15px #ffea00, 0 0 30px #ffcc00, 0 0 45px #ff8800; }
+    0% { transform: scale(1); text-shadow: 0 0 10px #ffea00; }
+    100% { transform: scale(1.04); text-shadow: 0 0 20px #ffea00, 0 0 35px #ffcc00; }
 }
 
-/* Imagen del ramo animada flotando suavemente */
+/* Imagen del ramo/Snoopy */
 .bouquet-img {
-    max-width: 350px;
-    width: 75vw;
+    max-width: 380px;
+    width: 80vw;
     height: auto;
+    border-radius: 12px;
     filter: drop-shadow(0 0 25px rgba(255, 223, 0, 0.4));
     animation: floatBouquet 3s ease-in-out infinite alternate;
 }
 
 @keyframes floatBouquet {
     0% { transform: translateY(0px) scale(1); }
-    100% { transform: translateY(-12px) scale(1.02); }
+    100% { transform: translateY(-10px) scale(1.02); }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* Contenedor de flores flotantes de fondo */
@@ -122,12 +144,8 @@ body {
         transform: translateY(0) rotate(0deg) scale(0.5);
         opacity: 0;
     }
-    20% {
-        opacity: 0.9;
-    }
-    80% {
-        opacity: 0.9;
-    }
+    20% { opacity: 0.9; }
+    80% { opacity: 0.9; }
     100% {
         transform: translateY(-110vh) rotate(360deg) scale(1.1);
         opacity: 0;
