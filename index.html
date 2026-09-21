@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <h1>Para ti 💛</h1>
-        <p>Una pequeña animación de flores amarillas.</p>
+    <!-- Tarjeta inicial con el texto solicitado -->
+    <div class="card" id="card">
+        <h1>Haz click aquí 💛</h1>
     </div>
 
-    <!-- Contenedor donde aparecerán las flores dinámicamente -->
+    <!-- Contenedor de la sorpresa (el perrito con el ramo) que aparecerá al hacer clic -->
+    <div class="surprise-container" id="surpriseContainer">
+        <img src="perrito.png" alt="Perrito con flores amarillas" class="surprise-img">
+    </div>
+
+    <!-- Contenedor donde flotan las flores amarillas -->
     <div class="flowers-container" id="flowersContainer"></div>
 
     <script src="script.js"></script>
